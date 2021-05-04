@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* My CSS */
+
+
+.jumbotron{
+  height: 100vh;
+  padding: 0 !important;
+  width: 100vw;
+}
+
+.bg-img {
+  background-image: url(../src/assets/images/pupsterhero.jpg);
+  /* background-image: url(../src/assets/images/stones.jpeg); */
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
