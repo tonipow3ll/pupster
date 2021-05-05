@@ -4,9 +4,11 @@ import Hero from '../components/Hero'
 function HomePage(props) {
     return (
         <div>
-    
-        <Hero title={props.title} />
 
+            <Hero title={props.title} />
+            <h1>About Pupster</h1>
+            <p>This is a site all about Dogs, Doggos, Puppies, Pupsters! Enjoy!</p>
+            
         </div>
     )
 }
