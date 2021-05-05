@@ -5,10 +5,8 @@ import Hero from '../components/Hero'
 function SearchPage(props) {
     return (
         <div>
-            <Container>
-            <Hero title={props.title} />
 
-            </Container>
+            <Hero title={props.title} />
         </div>
     )
 }
