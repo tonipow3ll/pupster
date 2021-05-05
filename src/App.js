@@ -3,9 +3,10 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import {Container, Navbar, Nav} from 'react-bootstrap'
+// import Container from 'react-bootstrap/Container';
+// import Navbar from 'react-bootstrap/Navbar';
+// import Nav from 'react-bootstrap/Nav';
 
 import HomePage from './pages/HomePage'
 import './App.css';
@@ -45,21 +46,20 @@ class App extends React.Component {
       <Router>
         <Container fluid={true}>
 
+  
+
           <Navbar className="border-bottom" bg="transparent" expand="lg">
-            <Navbar.Brand>Pupster</Navbar.Brand>
+            <Navbar.Brand><Link to="/" id="brand">Pupster</Link></Navbar.Brand>
 
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
-            {/* <Navbar.Collapse id="navbar-toggle"> */}
-            <Nav className="ml-auto">
+            <Navbar.Collapse id="navbar-toggle">
               <Nav className="ml-auto">
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
-                <Link className="nav-link" to="/Discover">Discover</Link>
-                <Link className="nav-link" to="/Search">Search</Link>
+                <Link className="nav-link" to="/discover">Discover</Link>
+                <Link className="nav-link" to="/search">Search</Link>
               </Nav>
-
-            </Nav>
-
+            </Navbar.Collapse>
           </Navbar>
 
 
