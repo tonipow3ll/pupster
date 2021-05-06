@@ -6,7 +6,11 @@ import API from '../utils/API';
 
 function DiscoverPage(props) {
 
-    const handleBtnClick = event => {
+    const [message, setDoggos] = useState({
+        image: "",
+    })
+    
+     const handleBtnClick = event => {
         API.getRandomDog().then(response => {
             const newDoggo = () => {
                 return response.data.message
@@ -14,9 +18,6 @@ function DiscoverPage(props) {
             setDoggos(newDoggo)
         })
     }
-    const [message, setDoggos] = useState({
-        image: "",
-    })
 
     useEffect(() => {
         API.getRandomDog().then(response => {
@@ -43,7 +44,7 @@ function DiscoverPage(props) {
                 </Row>
                 <Row>
                     <Col>
-                        <button onClick={handleBtnClick} className='btn btn-info my-3'>More puppers please!</button>
+                        <button onClick={handleBtnClick} className='btn btn-info my-3'>More 🐶!</button>
                          <GiveLove />
                     </Col>
                 </Row>
