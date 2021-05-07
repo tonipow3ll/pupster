@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Alert } from 'react-bootstrap'
+import { FaDog } from 'react-icons/fa';
 import API from '../utils/API';
 
 
@@ -24,7 +25,6 @@ function SearchPage(props) {
 
 
     useEffect(() => {
-        // const inputClick = (event) => {
         API.getBaseBreedsList().then(response => {
             const fullList = () => {
                 return response.data.message
@@ -34,13 +34,8 @@ function SearchPage(props) {
     }, [])
 
 
-    // }
 
-    // const handleFormSubmit = event => {
-    //     API.getDogsOfBreed().then(response => {
-    //         console.log(response)
-    //     })
-    // }
+  
 
     // <datalist id="breeds">
     //       {props.breeds.map(breed => (
@@ -66,7 +61,7 @@ function SearchPage(props) {
                         //   {breed} 
                     })}
                 </select>
-                <button onClick={handleFormSubmit} className="btn btn-info">heckin' search</button>
+                <button onClick={handleFormSubmit} className="btn btn-info"><FaDog /></button>
 
 
                 <Alert >
