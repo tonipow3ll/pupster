@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import Hero from '../components/Hero'
-import { Card, Row, Col, Container } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 import GiveLove from '../components/Love'
 import API from '../utils/API';
 

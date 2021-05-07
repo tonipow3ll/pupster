@@ -14,6 +14,9 @@ code {
 
 
 /* My CSS */
+ul{
+  list-style-type: none;
+}
 
 .img{
   max-width: 75vw;

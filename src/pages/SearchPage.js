@@ -1,27 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { Alert } from 'react-bootstrap'
 import API from '../utils/API';
 
-// import Hero from '../components/Hero'
 
 function SearchPage(props) {
 
     const [search, setSearch] = useState("")
-
-    const [breeds, setBreeds] = useState({
-        breeds: []
-    })
+    const [breedsList, setBreeds] = useState([])
     const [results, setResults] = useState([])
 
-    // const onLoad = () => {
-    //     API.getBaseBreedsList().then(response => {
-    //         setSearch((prevSearch) => {
-    //            return {
-    //             ...prevSearch,
-    //             breeds: response.data.message
-    //         }
-    //     })
-    //     })
-    // }
+
+
     const handleChange = (event) => {
         let dogSearch = event.target.value;
         setSearch(dogSearch);
@@ -31,9 +20,25 @@ function SearchPage(props) {
         event.preventDefault();
         // let dogPhotos = response.data.message
         API.getDogsOfBreed(search).then(response => {
-            setResults(response.data.message);
+            setResults(response.data.message)
         })
     }
+
+    // const getBreeds = event => {
+    useEffect(() => {
+        // const inputClick = (event) => {
+        API.getBaseBreedsList().then(response => {
+            const fullList = () => {
+                return response.data.message
+            }
+            setBreeds(fullList)
+        })
+        // }
+        // .catch(err => console.log(err))
+    }, [])
+
+
+    // }
 
     // const handleFormSubmit = event => {
     //     API.getDogsOfBreed().then(response => {
@@ -41,26 +46,51 @@ function SearchPage(props) {
     //     })
     // }
 
+    // <datalist id="breeds">
+    //       {props.breeds.map(breed => (
+    //         <option value={breed} key={breed} />
+    //       ))}
+    //     </datalist>
 
     return (
-        <div>
-            <h1>Search for Pupsters!</h1>
-            <input
+        <div className="text-center">
+            <h1 className="text-center">Search for Pupsters!</h1>
+            <div className="form-group">
+                <label htmlFor="breed">Breed Name:</label>
+                {/* <input
+                name="breed"
                 placeholder="Enter a breed"
                 onChange={handleChange}
-                // onLoad={onLoad}
-            />
-            
-            <ul>
-                
-                <li>
-                    {results.map((imgsrc, i) => {
-                      return <img alt="dog" key={imgsrc + i} src={imgsrc}/>
+                list="breedsList"
+            /> */}
+                <select onChange={handleChange}>
+                    {/* {console.log(breedsList)} */}
+                    {breedsList.map((breed) => {
+                        return <option value={breed} key={breed}>{breed}</option>
+                        //   {breed} 
                     })}
-                    {/* <img alt="dog" src={results}/> */}
-                </li>
+                </select>
+                <button onClick={handleFormSubmit} className="btn btn-info">heckin' search</button>
+
+
+                <Alert >
+                    <p>
+                        {/* <strong>Error [404]</strong> */}
+                        {/* {': '} */}
+                        {!search ? "API error, please try a different breed" : ""}
+                    </p>
+                </Alert>
+                {/* <div>
+                    <datalist>
+                        <option>Something here</option>
+                    </datalist>
+                </div> */}
+            </div>
+            <ul>
+                {results.map((imgsrc) => {
+                    return <li className="py-3"><img alt="dog" key={imgsrc} src={imgsrc} /> </li>
+                })}
             </ul>
-            <button onClick={handleFormSubmit} className="btn btn-info">heckin' search</button>
 
         </div>
     )
