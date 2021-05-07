@@ -29,11 +29,6 @@ function DiscoverPage(props) {
             setDoggos(randomDoggos)
         })
     },[])
-    // useEffect(() => {
-    //     if (message.image) {
-    //         console.log(message)
-    //     }
-    // },[message])
 
     return (
         <div>
