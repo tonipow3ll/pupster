@@ -28,24 +28,29 @@ function DiscoverPage(props) {
             }
             setDoggos(randomDoggos)
         })
-    }, [])
+    },[])
+    // useEffect(() => {
+    //     if (message.image) {
+    //         console.log(message)
+    //     }
+    // },[message])
 
     return (
         <div>
-            {/* <Hero title={props.title} /> */}
+           
             <Container className="text-center" fluid>
                 <Row>
                     <Col>
                         <h1 className="mx-auto my-auto">{props.title}</h1>
-                        {/* <Card className="dogcard" fluid="md"> */}
+                        
                         <img className="img" src={message}></img>
-                        {/* </Card> */}
+                      
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <button onClick={handleBtnClick} className='btn btn-info my-3'>More 🐶!</button>
-                         <GiveLove />
+                         <GiveLove shuffleFn={handleBtnClick}/>
                     </Col>
                 </Row>
             </Container>

@@ -7,11 +7,14 @@ function GiveLove(props) {
     const handleIncrement = () => {
         setCount(prevCount => prevCount + 1);
     }
-    
+   const handleClick = () => {
+        props.shuffleFn()
+            handleIncrement()
+    }
     return(
         <div>
             <h3>You have sent {count} doggos love!</h3>
-            <button className='btn btn-info my-3 mx-3' onClick={handleIncrement}> 🐶 💙 🐶  </button>
+            <button className='btn btn-info my-3 mx-3' onClick={handleClick}  > 🐶 💙 🐶  </button>
         </div>
     )
 }

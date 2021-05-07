@@ -5,29 +5,36 @@ import API from '../utils/API';
 
 function SearchPage(props) {
 
-    const [search, setSearch] = useState({
-        search: "",
-        breeds: [],
-        results: [],
-        error: ""
-    })
+    const [search, setSearch] = useState("")
 
+    const [breeds, setBreeds] = useState({
+        breeds: []
+    })
+    const [results, setResults] = useState([])
+
+    // const onLoad = () => {
+    //     API.getBaseBreedsList().then(response => {
+    //         setSearch((prevSearch) => {
+    //            return {
+    //             ...prevSearch,
+    //             breeds: response.data.message
+    //         }
+    //     })
+    //     })
+    // }
     const handleChange = (event) => {
-          setSearch({
-              search: event.target.value,
-             });
-         console.log(search)
+        let dogSearch = event.target.value;
+        setSearch(dogSearch);
+        // console.log(search)
     }
     const handleFormSubmit = event => {
         event.preventDefault();
-        API.getDogsOfBreed().then(response => {
-            setSearch({
-                search: event.target.value,
-                results: response.data.message
-            })
-            // setSearch({ results: response.data.message })
+        // let dogPhotos = response.data.message
+        API.getDogsOfBreed(search).then(response => {
+            setResults(response.data.message);
         })
     }
+
     // const handleFormSubmit = event => {
     //     API.getDogsOfBreed().then(response => {
     //         console.log(response)
@@ -37,20 +44,24 @@ function SearchPage(props) {
 
     return (
         <div>
-            
             <h1>Search for Pupsters!</h1>
-           
             <input
                 placeholder="Enter a breed"
                 onChange={handleChange}
-            >
-            </input>
+                // onLoad={onLoad}
+            />
+            
             <ul>
-
-           <li>test test</li>
+                
+                <li>
+                    {results.map((imgsrc, i) => {
+                      return <img alt="dog" key={imgsrc + i} src={imgsrc}/>
+                    })}
+                    {/* <img alt="dog" src={results}/> */}
+                </li>
             </ul>
-            <button onClick={handleFormSubmit}className="btn btn-info">heckin' search</button>
-         
+            <button onClick={handleFormSubmit} className="btn btn-info">heckin' search</button>
+
         </div>
     )
 }
