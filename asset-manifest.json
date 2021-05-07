@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/pupster/static/css/main.ea092a7a.chunk.css",
+    "main.js": "/pupster/static/js/main.d95e324b.chunk.js",
+    "main.js.map": "/pupster/static/js/main.d95e324b.chunk.js.map",
+    "runtime-main.js": "/pupster/static/js/runtime-main.5846246b.js",
+    "runtime-main.js.map": "/pupster/static/js/runtime-main.5846246b.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/pupster/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.998c4158.chunk.js": "/pupster/static/js/2.998c4158.chunk.js",
+    "static/js/2.998c4158.chunk.js.map": "/pupster/static/js/2.998c4158.chunk.js.map",
+    "static/js/3.1a2de271.chunk.js": "/pupster/static/js/3.1a2de271.chunk.js",
+    "static/js/3.1a2de271.chunk.js.map": "/pupster/static/js/3.1a2de271.chunk.js.map",
+    "index.html": "/pupster/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/pupster/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.ea092a7a.chunk.css.map": "/pupster/static/css/main.ea092a7a.chunk.css.map",
+    "static/js/2.998c4158.chunk.js.LICENSE.txt": "/pupster/static/js/2.998c4158.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/pupster/static/media/basset.07dcfdc8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5846246b.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.998c4158.chunk.js",
+    "static/css/main.ea092a7a.chunk.css",
+    "static/js/main.d95e324b.chunk.js"
+  ]
+}
