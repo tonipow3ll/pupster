@@ -38,7 +38,7 @@ function DiscoverPage(props) {
                     <Col>
                         <h1 className="mx-auto my-auto">{props.title}</h1>
                         
-                        <img className="img" src={message}></img>
+                        <img className="img" alt="dog" src={message}></img>
                       
                     </Col>
                 </Row>
