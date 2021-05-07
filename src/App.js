@@ -42,7 +42,7 @@ class App extends React.Component {
       <Router>
         <Container fluid={true}>
 
-          <Navbar className="border-bottom" bg="transparent" expand="xl">
+          <Navbar className="border-bottom text-center" bg="transparent" expand="xl">
             <Navbar.Brand ><Link to="/" className="brand">Pupster</Link></Navbar.Brand>
 
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />

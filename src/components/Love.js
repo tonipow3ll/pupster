@@ -13,8 +13,8 @@ function GiveLove(props) {
     }
     return(
         <div>
-            <h3>You have sent {count} doggos love!</h3>
             <button className='btn btn-info my-3 mx-3' onClick={handleClick}  > 🐶 💙 🐶  </button>
+            <h3>You have sent {count} doggos love!</h3>
         </div>
     )
 }

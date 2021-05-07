@@ -9,8 +9,6 @@ function SearchPage(props) {
     const [breedsList, setBreeds] = useState([])
     const [results, setResults] = useState([])
 
-
-
     const handleChange = (event) => {
         let dogSearch = event.target.value;
         setSearch(dogSearch);
@@ -24,7 +22,7 @@ function SearchPage(props) {
         })
     }
 
-    // const getBreeds = event => {
+
     useEffect(() => {
         // const inputClick = (event) => {
         API.getBaseBreedsList().then(response => {
@@ -33,8 +31,6 @@ function SearchPage(props) {
             }
             setBreeds(fullList)
         })
-        // }
-        // .catch(err => console.log(err))
     }, [])
 
 
